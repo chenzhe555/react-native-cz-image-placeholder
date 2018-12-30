@@ -22,7 +22,7 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.chenzhe.rnimageplaceholder.RNCzImagePlaceholderPackage;` to the imports at the top of the file
+  - Add `import com.chenzhe.imageplaceholder.RNCzImagePlaceholderPackage;` to the imports at the top of the file
   - Add `new RNCzImagePlaceholderPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
