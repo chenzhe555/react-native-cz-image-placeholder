@@ -1,5 +1,5 @@
 
-package com.chenzhe.imageplaceholder;
+package com.chenzhe.rnimageplaceholder;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;

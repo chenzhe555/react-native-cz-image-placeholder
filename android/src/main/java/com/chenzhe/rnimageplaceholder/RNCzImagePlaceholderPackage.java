@@ -1,5 +1,5 @@
 
-package com.chenzhe.imageplaceholder;
+package com.chenzhe.rnimageplaceholder;
 
 import java.util.Arrays;
 import java.util.Collections;
