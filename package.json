@@ -14,8 +14,14 @@
   ],
   "author": "",
   "license": "",
-  "peerDependencies": {
-    "react-native": "0.41.2",
-    "react-native-fast-image": "^5.1.1"
-  }
+  "dependencies": {
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-fast-image": "5.1.1"
+  },
+  "devDependencies": {
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-native-fast-image": "5.1.1"
+  },
 }
