@@ -15,9 +15,9 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "react-native-fast-image": "5.1.1"
+    "react-native-fast-image": "^5.1.2"
   },
   "devDependencies": {
-    "react-native-fast-image": "5.1.1"
+    "react-native-fast-image": "^5.1.2"
   }
 }
