@@ -14,3 +14,7 @@ import ImagePlaceholder from 'react-native-cz-image-placeholder';
     url={pic_label_image_url}
     defaultSource={require('../../../assets/images/good_default_icon.png')}
 />    
+
+
+################################# 链接地址
+简书：https://www.jianshu.com/p/42f853fa36de
