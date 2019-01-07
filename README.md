@@ -14,6 +14,3 @@ import ImagePlaceholder from 'react-native-cz-image-placeholder';
     url={pic_label_image_url}
     defaultSource={require('../../../assets/images/good_default_icon.png')}
 />    
-  
-## Contact
-376811578@qq.com
