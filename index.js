@@ -180,9 +180,9 @@ export default class CZImagePlaceholder extends Component{
                 )
             }
         } else {
-            if (Object.keys(style).length > 0) {
+            if (width != 0 && height != 0) {
                 contentView = (
-                    <Image style={style} source={defaultSource}/>
+                    <Image style={[{width: width, height: height}, style]} source={defaultSource}/>
                 );
             }
         }
