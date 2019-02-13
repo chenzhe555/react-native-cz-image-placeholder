@@ -70,6 +70,12 @@ export default class CZImagePlaceholder extends Component{
         if (this.props.evaluateView) this.props.evaluateView(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            url: nextProps.url ? nextProps.url : ''
+        });
+    }
+
     /**************************** 对外提供到方法 ****************************/
     //更换图片地址
     modifyImageUrl(url = '') {
