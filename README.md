@@ -36,13 +36,13 @@ style: 图片样式: {borderRadius: 50}
 headers: 图片headers: {"x": "y"}
 ```
 ```
-priority: 图片下载优先级: CZImagePlaceholder.priority.normal
+priority: 图片下载优先级: CZImagePlaceholder.priority.normal (low, high)
 ```
 ```
-cache: 下载缓存策略: CZImagePlaceholder.cacheControl.immutable
+cache: 下载缓存策略: CZImagePlaceholder.cacheControl.immutable (web, cacheOnly)
 ```
 ```
-resizeMode: 图片显示类型: CZImagePlaceholder.resizeMode.contain
+resizeMode: 图片显示类型: CZImagePlaceholder.resizeMode.contain (cover, stretch, center)
 ```
 
 ###  3.属性方法:
