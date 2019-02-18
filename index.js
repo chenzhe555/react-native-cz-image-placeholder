@@ -3,22 +3,22 @@ import {View, Text, Image, ActivityIndicator, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 /*
-defaultSource: 默认图: require('./images/xxx.png')
-url: 图片地址: ''
-width: 图片宽
-height: 图片高
-style: 图片样式: {borderRadius: 50}
-headers: 图片headers: {"x": "y"}
-priority: 图片下载优先级: CZImagePlaceholder.priority.normal
-cache: 下载缓存策略: CZImagePlaceholder.cacheControl.immutable
-resizeMode: 图片显示类型: CZImagePlaceholder.resizeMode.contain
+* defaultSource: 默认图: require('./images/xxx.png')
+* url: 图片地址: ''
+* width: 图片宽
+* height: 图片高
+* style: 图片样式: {borderRadius: 50}
+* headers: 图片headers: {"x": "y"}
+* priority: 图片下载优先级: CZImagePlaceholder.priority.normal (low, high)
+* cache: 下载缓存策略: CZImagePlaceholder.cacheControl.immutable (web, cacheOnly)
+* resizeMode: 图片显示类型: CZImagePlaceholder.resizeMode.contain (cover, stretch, center)
 
-func:
-evaluateView: 赋值当前对象
-onLoadStart: 开始下载网络图片
-onLoad: 下载成功
-onError: 下载失败
-onLoadEnd: 加载完成，无论成功失败都会调用
+* func:
+* evaluateView: 赋值当前视图对象
+* onLoadStart: 开始下载网络图片
+* onLoad(event): 下载成功
+* onError: 下载失败
+* onLoadEnd: 加载完成，无论成功失败都会调用
 
 export func:
 modifyImageUrl: 更换图片地址
@@ -70,15 +70,11 @@ export default class CZImagePlaceholder extends Component{
         if (this.props.evaluateView) this.props.evaluateView(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            url: nextProps.url ? nextProps.url : ''
-        });
-    }
-
     /**************************** 对外提供到方法 ****************************/
-    //更换图片地址
-    modifyImageUrl(url = '') {
+    /*
+    * 更换图片地址
+    * */
+    modifyImageUrl = (url = '') => {
         if (url.length > 0) {
             this.setState({
                 url: url
@@ -88,27 +84,27 @@ export default class CZImagePlaceholder extends Component{
 
     /**************************** Render中方法 ****************************/
     //开始下载网络图片
-    _onLoadStart() {
+    _onLoadStart = () => {
         this.status = CZImagePlaceholder.Status.isDownLoading;
         if (this.props.onLoadStart) this.props.onLoadStart();
     }
 
     //下载成功
-    _onLoad() {
+    _onLoad = (event) => {
         this.status = CZImagePlaceholder.Status.DownSuccess;
         this.forceUpdate();
-        if (this.props.onLoad) this.props.onLoad();
+        if (this.props.onLoad) this.props.onLoad(event);
     }
 
     //下载失败
-    _onError() {
+    _onError = () => {
         this.status = CZImagePlaceholder.Status.DownFail;
         this.forceUpdate();
         if (this.props.onError) this.props.onError();
     }
 
     //加载完成，无论成功失败都会调用
-    _onLoadEnd() {
+    _onLoadEnd = () => {
         if (this.props.onLoadEnd) this.props.onLoadEnd();
     }
 
@@ -164,10 +160,10 @@ export default class CZImagePlaceholder extends Component{
                                 cache: cache
                             }}
                             resizeMode={resizeMode}
-                            onLoadStart={this._onLoadStart.bind(this)}
-                            onLoad={this._onLoad.bind(this)}
-                            onError={this._onError.bind(this)}
-                            onLoadEnd={this._onLoadEnd.bind(this)}
+                            onLoadStart={this._onLoadStart}
+                            onLoad={this._onLoad}
+                            onError={this._onError}
+                            onLoadEnd={this._onLoadEnd}
                         />
                         {
                             shwoDefaultImage ? (
@@ -186,9 +182,9 @@ export default class CZImagePlaceholder extends Component{
                 )
             }
         } else {
-            if (width != 0 && height != 0) {
+            if (Object.keys(style).length > 0) {
                 contentView = (
-                    <Image style={[{width: width, height: height}, style]} source={defaultSource}/>
+                    <Image style={style} source={defaultSource}/>
                 );
             }
         }
