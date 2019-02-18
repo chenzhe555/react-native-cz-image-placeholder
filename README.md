@@ -16,15 +16,7 @@ import ImagePlaceholder from 'react-native-cz-image-placeholder';
 />  
 ```
 
-###  2.方法说明:
-```
-/*
-* 更换图片地址
-* */
-this.imagePlaceholder.modifyImageUrl('url');
-```
-
-###  3.属性说明:
+###  2.属性:
 ```
 defaultSource: 默认图: require('./images/xxx.png')
 ```
@@ -52,18 +44,28 @@ cache: 下载缓存策略: CZImagePlaceholder.cacheControl.immutable
 ```
 resizeMode: 图片显示类型: CZImagePlaceholder.resizeMode.contain
 ```
+
+###  3.属性方法:
 ```
-evaluateView(Func): 赋值当前视图对象
-```
-```
-onLoadStart(Func): 开始下载网络图片
-```
-```
-onLoad(Func): 下载成功
+evaluateView: 赋值当前视图对象
 ```
 ```
-onError(Func): 下载失败
+onLoadStart: 开始下载网络图片
 ```
 ```
-onLoadEnd(Func): 加载完成，无论成功失败都会调用
+onLoad(event): 下载成功
+```
+```
+onError: 下载失败
+```
+```
+onLoadEnd: 加载完成，无论成功失败都会调用
+```
+
+###  4.供外部调用的方法:
+```
+/*
+* 更换图片地址
+* */
+this.imagePlaceholder.modifyImageUrl('url');
 ```
