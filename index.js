@@ -76,6 +76,7 @@ export default class CZImagePlaceholder extends Component{
     * */
     modifyImageUrl = (url = '') => {
         if (url.length > 0) {
+            this.status = CZImagePlaceholder.Status.NoDown;
             this.setState({
                 url: url
             })
@@ -167,7 +168,7 @@ export default class CZImagePlaceholder extends Component{
                         />
                         {
                             shwoDefaultImage ? (
-                                <Image source={defaultSource} style={[{width: width, height: height, zIndex: 2}, styles.AbsoluteImage]}/>
+                                <Image source={defaultSource} style={[{width: width, height: height, zIndex: 2}, styles.AbsoluteImage, style]}/>
                             ) : null
                         }
                         {
