@@ -12,12 +12,6 @@
     "image",
     "image-placeholder"
   ],
-  "author": "",
-  "license": "",
-  "dependencies": {
-    "react-native-fast-image": "^5.1.2"
-  },
-  "devDependencies": {
-    "react-native-fast-image": "^5.1.2"
-  }
+  "author": "陈哲是个好孩子",
+  "license": "MIT"
 }
