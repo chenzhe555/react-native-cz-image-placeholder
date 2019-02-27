@@ -2,6 +2,10 @@
 
 npm install react-native-cz-image-placeholder --save
 
+###依赖库
+
+npm install react-native-fast-image --save
+
 
 ## Usage
 ###  1.引入组件
