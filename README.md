@@ -20,6 +20,15 @@ import ImagePlaceholder from 'react-native-cz-image-placeholder';
 />  
 ```
 
+iOS: 在Podfile中加入
+```
+pod 'react-native-fast-image', :path => '../node_modules/react-native-fast-image/react-native-fast-image.podspec'
+```
+然后执行
+```
+pod install
+```
+
 ###  2.属性:
 ```
 defaultSource: 默认图: require('./images/xxx.png')
